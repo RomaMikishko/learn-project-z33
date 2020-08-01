@@ -30,9 +30,6 @@ class MyHandler(SimpleHTTPRequestHandler):
 
     def handle_404(self):
         msg = """NOT FOUND!!!!!!!"""
-
-        
-
         self.send_response(404)
         self.send_header("Content-type", "text/plain")
         self.send_header("Content-length", str(len(msg)))
@@ -40,6 +37,7 @@ class MyHandler(SimpleHTTPRequestHandler):
         self.wfile.write(msg.encode())
 
     def respond(self, code):
+        msg = """NOT FOUND!!!!!!!"""
         self.send_response(code)
         self.send_header("Content-type", "text/plain")
         self.send_header("Content-length", str(len(msg)))
@@ -63,24 +61,6 @@ class MyHandler(SimpleHTTPRequestHandler):
             result = f"{result}/"
 
         return result
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
