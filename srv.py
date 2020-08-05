@@ -11,6 +11,9 @@ class MyHttp(SimpleHTTPRequestHandler):
             self.handle_root()
         elif path == "/hello/":
             self.handle_hello()
+        elif path = "/style/"
+
+
         else:
             self.handle_404()
 
@@ -29,6 +32,26 @@ class MyHttp(SimpleHTTPRequestHandler):
         """
 
         self.respond(content)
+
+        def handle_style(self):
+            css_file = settings.PROJECT_DIR / "styles" / "styles.css"
+            if not css_file.exists():
+                return self.handle_404()
+
+            with css_file.open("r") as fp:
+                css = fp.read()
+
+            self.respond(css, content_type="text/css")
+
+        def handle_image(self):
+            image_file = settings.PROJECT_DIR / "images" / "xxx.png"
+            if not image_file.exists():
+                return self.handle_404()
+
+            with image_file.open("rb") as fp:
+                img = fp.read()
+
+            self.respond(img, content_type="image/png")
 
     def handle_404(self):
         msg = """NOT FOUND!!!!!!!!"""
