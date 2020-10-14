@@ -16,12 +16,13 @@ pytest-selenium = "*"
 
 [packages]
 delorean = "*"
+dj-database-url = "*"
 django = "*"
-jinja2 = "*"
-<<<<<<< HEAD
 dynaconf = {extras = ["yaml"], version = "*"}
-=======
->>>>>>> 29c378497e8032336f567f1ec43d8f6111085c73
+jinja2 = "*"
+psycopg2-binary = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

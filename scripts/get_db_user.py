@@ -1,8 +1,8 @@
-from utils import get_db_name
+from utils import get_db_username
 
 
 def main():
-    name = get_db_name()
+    name = get_db_username()
     print(name)
 
 
